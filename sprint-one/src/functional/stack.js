@@ -19,7 +19,6 @@ var Stack = function(){
     }
 
     return last;
-
   };
 
   someInstance.size = function(){
