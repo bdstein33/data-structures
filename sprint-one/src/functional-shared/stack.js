@@ -7,9 +7,7 @@ var Stack = function() {
   someInstance.stackSize = 0;
 
   _.extend(someInstance, stackMethods);
-  console.log(someInstance)
   return someInstance;
-
 };
 
 var stackMethods = {};
