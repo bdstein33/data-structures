@@ -20,7 +20,7 @@ var Queue = function(){
         storage[i] = storage[i+1];
       }
 
-      delete storage[size];
+      delete storage[size-1];
       size--;
 
       return removed;

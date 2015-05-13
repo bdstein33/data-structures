@@ -15,7 +15,6 @@ var stackMethods = {};
 // declare StackMethods here
 
 stackMethods.size = function(){
-  // console.log(this.size);
   return this.stackSize;
 };
 
@@ -29,7 +28,6 @@ stackMethods.pop = function(){
     var last = this.storage[this.stackSize-1];
     delete this.storage[this.stackSize-1];
     this.stackSize--;
+    return last;
   }
-
-  return last;
 };
