@@ -20,11 +20,18 @@ treeMethods.addChild = function(value){
 
 treeMethods.contains = function(target){
  var toCheck = [this];
- while ()
-
+ while (toCheck.length > 0) {
+  var currentTree = toCheck.shift();
+  if (currentTree.value === target) {
+    return true;
+  }
+  for (var i=0; i < currentTree.children.length; i++) {
+    toCheck.push(currentTree.children[i]);
+  }
+ }
+ return false;
 };
 
-tree.contains(5)
 
 
 
