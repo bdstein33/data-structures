@@ -66,14 +66,12 @@ BinarySearchTree.prototype.contains = function(value){
 BinarySearchTree.prototype.depthFirstLog = function(cb){
 
 	var cbEachNode = function(node) {
-		if (node.value !== undefined) {
-			cb(node.value);
-		}
+		cb(node.value);
 		if (node.left.value !== undefined) {
-			cbEachNode(node.left.value);
+			return cbEachNode(node.left.value);
 		}
 		if (node.right.value !== undefined) {
-			cbEachNode(node.right.value);
+			return cbEachNode(node.right.value);
 		}
 	};
 	return cbEachNode(this);
