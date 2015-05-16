@@ -70,10 +70,10 @@ BinarySearchTree.prototype.depthFirstLog = function(cb){
 			cb(node.value);
 		}
 		if (node.left.value !== undefined) {
-			this.depthFirstLog(node.left.value);
+			cbEachNode(node.left.value);
 		}
 		if (node.right.value !== undefined) {
-			this.depthFirstLog(node.right.value);
+			cbEachNode(node.right.value);
 		}
 	};
 	return cbEachNode(this);
