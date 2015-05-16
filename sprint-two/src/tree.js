@@ -1,15 +1,10 @@
 var Tree = function(value){
-  var newTree = {};
-  newTree.value = value;
-  newTree.children = [];
-  _.extend(newTree, treeMethods);
-
-  return newTree;
+  var tree = {};
+  tree.value = value;
+  tree.children = [];
+  _.extend(tree, treeMethods);
+  return tree;
 };
-
-
-
-
 
 var treeMethods = {};
 
@@ -19,18 +14,23 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
- var toCheck = [this];
- while (toCheck.length > 0) {
-  var currentTree = toCheck.shift();
-  if (currentTree.value === target) {
-    return true;
-  }
-  for (var i=0; i < currentTree.children.length; i++) {
-    toCheck.push(currentTree.children[i]);
-  }
- }
- return false;
+  var containsTarget = false;
+
+  var checkTree = function(tree) {
+    console.log(tree.value);
+    if (tree.value === target) {
+      containsTarget = true;
+    } else {
+      for (var i=0; i < tree.children.length; i++) {
+        checkTree(tree.children[i]);
+      }
+    }
+  };
+
+  checkTree(this);
+  return containsTarget;
 };
+
 
 
 
@@ -38,3 +38,6 @@ treeMethods.contains = function(target){
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+
+
