@@ -22,7 +22,6 @@ var LimitedArray = function(limit){
   limitedArray.set = function(index, value){
     checkLimit(index);
     storage[index] = value;
-    console.log(storage);
   };
   limitedArray.each = function(callback){
     for(var i = 0; i < storage.length; i++){
@@ -55,6 +54,7 @@ var getIndexBelowMaxForKey = function(str, max){
  * Complexity: What is the time complexity of the above functions?
  */
 
-console.log(getIndexBelowMaxForKey('ben',8));
+storage = [1, 2, 3];
+storage = [{key: value, key2: value},{},{}]
 
 
