@@ -13,12 +13,12 @@ BinarySearchTree.prototype.right = function(){
 };
 
 BinarySearchTree.prototype.insert = function(value){
-  
+
   var insertValue = function(node) {
     if (value > node.value) {
       if (Object.keys(node.right).length === 0) {
         node.right = {value: value, left: {}, right: {}};
-      } 
+      }
       else {
         insertValue(node.right);
       }
@@ -26,7 +26,7 @@ BinarySearchTree.prototype.insert = function(value){
     else if (value < node.value) {
       if (Object.keys(node.left).length === 0) {
         node.left = {value: value, left: {}, right: {}};
-      } 
+      }
       else {
         insertValue(node.left);
       }
@@ -66,27 +66,23 @@ BinarySearchTree.prototype.contains = function(value){
 BinarySearchTree.prototype.depthFirstLog = function(cb){
 
 	var cbEachNode = function(node) {
-		cb(node.value);
+    cb(node.value);
 		if (node.left.value !== undefined) {
-			return cbEachNode(node.left.value);
+			cbEachNode(node.left);
 		}
 		if (node.right.value !== undefined) {
-			return cbEachNode(node.right.value);
+			cbEachNode(node.right);
 		}
 	};
-	return cbEachNode(this);
+
+	cbEachNode(this);
 };
 /*
  * Complexity: What is the time complexity of the above functions?
  */
 
 
-// var test = new BinarySearchTree(8);
-// console.log(test);
-// test.insert(10);
-// console.log(test);
-// test.insert(5);
-// console.log(test);
+
 
 
 
